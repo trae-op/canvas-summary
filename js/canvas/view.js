@@ -16,7 +16,7 @@ App.Views.MyView = new ViewKonva(function(_this) {
 
       var radiusItem = 15;
       var radiusAfter = 5;
-      var afterCercles = 30;
+      var afterCercles = 50;
       var borderItem = 1;
       var borderAfterCercle = (_this.CheckMobile() ? 0.1 : 0.3);
       var sizeImage = 40;
