@@ -27,10 +27,20 @@ ViewKonva.prototype.ActiveItems = function(object) {
 
   if (object.shadowColor === false)
   _this.AllElements(object.layer.children, function(data) {
-    if (data.attrs.text) data.shadowColor(object.shadowColor);
+    if (data.attrs.text) 
+      data
+      .shadowColor(object.shadowColor)
+      .strokeWidth(object.shadowColor)
+      .stroke(object.shadowColor);
+    else 
+      data.shadowColor(object.shadowColor);
+
   });
   else
-    object.node.shadowColor(object.shadowColor);
+    object.node
+    .shadowColor(object.shadowColor)
+    .strokeWidth(1)
+    .stroke(object.shadowColor);
 
   for (var i = 0; i < object.number; i++) {
 

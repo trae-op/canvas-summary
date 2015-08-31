@@ -509,16 +509,19 @@ App.Views.MyView = new ViewKonva(function(_this) {
             var numberCompany = companyPreview.length;
             var first = 4;
             var radius = 25;
-            var colorBackground = '#ccc';
+            var colorBackground = colorAfterCercles;
             var speedItemSubMenu = (_this.CheckMobile() ? 0 : 0.1);
 
-            for (var i = 0; i < afterCercles; i++)
+            for (var i = 0; i < afterCercles; i++) {
+              var prevCercle = layer('layerMain').children[(allItemMenu + 4) + i];
               new Konva.Tween({
                 node: layer('layerMain').children[(allItemMenu + 4) + i],
                 duration: speedItemSubMenu,
                 radius: radiusAfter,
                 fill: colorAfterCercles
               }).play();
+              prevCercle.shadowColor(false);
+            }
 
             _this.AllElements(layer('layerProjects').children, function(data) {
               data.hide();
@@ -540,6 +543,7 @@ App.Views.MyView = new ViewKonva(function(_this) {
                   node: cercleImg,
                   duration: speedItemSubMenu,
                   radius: radius,
+                  shadowColor: 'red',
                   fill: colorBackground
                 }).play();
 
