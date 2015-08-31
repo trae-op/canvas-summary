@@ -1,0 +1,93 @@
+.close:before {
+  content: "";
+  display: block; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, main, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+a {
+  text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+main, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, input, textarea, button {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input, textarea, button {
+  border: 0; }
+
+textarea {
+  overflow: hidden;
+  resize: none; }
+
+input[type="text"]:focus, textarea:focus {
+  outline: none; }
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+body {
+  background: #444; }
+
+body, html {
+  overflow: hidden; }
+
+.close {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: top false false, 0.5s false false;
+  -moz-transition: top false false false, 0.5s false false false;
+  -o-transition: top false false false, 0.5s false false false;
+  transition: top, 0.5s;
+  background: url(../img/close.png) center no-repeat #fff;
+  -webkit-background-size: 20px;
+  -moz-background-size: 20px;
+  -o-background-size: 20px;
+  background-size: 20px;
+  cursor: pointer;
+  height: 40px;
+  left: 1%;
+  position: absolute;
+  top: -45px;
+  width: 40px;
+  z-index: 1; }
+  .close:focus {
+    outline: none; }
+  .close:before {
+    background: #fff;
+    height: 200%;
+    left: 45%;
+    position: absolute;
+    top: -200%;
+    width: 2px; }
+
+.open-close {
+  top: 30px; }

@@ -1,0 +1,23 @@
+{
+  "title": "Проекты",
+  "company": "FFW",
+  "description": "Международная компания",
+  "projects": [
+  	{
+  		"link": "#/",
+  		"image": "img/rb1.jpg"
+  	},
+  	{
+  		"link": "#/",
+  		"image": "img/rb2.jpg"
+  	},
+    {
+      "link": "#/",
+      "image": "img/rb2.jpg"
+    },
+    {
+      "link": "#/",
+      "image": "img/rb1.jpg"
+    }
+  ]
+}
