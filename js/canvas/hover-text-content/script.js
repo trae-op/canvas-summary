@@ -38,6 +38,7 @@ ViewKonva.prototype.HoverTextContent = function(thisPreview, index, data, cursor
 	var endPosition;
 	var opacity;
 
+	if (data.url === 'company')
 	document.body.style.cursor = cursor;
 
 	if (cursor === 'pointer') {
