@@ -46,6 +46,7 @@ App.Views.MyView = new ViewKonva(function(_this) {
         addClass: 'open-close'
     });
 
+
     stage.add(layer('layerMain'));
 
     }

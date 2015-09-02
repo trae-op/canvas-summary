@@ -59,6 +59,9 @@ App.Models.Groups = [
   {
     id: 'groupProject-placeview'
   },
+  {
+    id: 'groupProject-palatanaroda'
+  },
 
 
 
@@ -115,6 +118,17 @@ App.Models.Data = [
           {
             link: 'http://pattydoo.de/blog',
             image: 'img/pattydoo.png'
+          }
+        ]
+      },
+      {
+        text: 'Palatanaroda.com',
+        image: 'img/palatanaroda.png',
+        id: 'palatanaroda',
+        projects: [
+          {
+            link: 'http://palatanaroda.com',
+            image: 'img/palatanaroda.png'
           }
         ]
       }
