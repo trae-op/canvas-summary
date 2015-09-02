@@ -12,8 +12,8 @@ ViewKonva.prototype.CircleItemsMenu = function() {
 	for (var i = 0; i < _this.Data.length; i++)
 		circle.push({
 			radius: _this.RadiusItemMenu,
-			x: (Math.random() * (_this.Stage.width()/3)), 
-			y: (Math.random() * (_this.Stage.height()/1.5)),
+			x: _this.Stage.width()/6, 
+			y: _this.Stage.height()/2,
 			fill: _this.ColorItemMenu
 		});
 
