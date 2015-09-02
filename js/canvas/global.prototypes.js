@@ -233,14 +233,57 @@ ViewKonva.prototype.StartKeyboard = function() {
   };
 };
 
-ViewKonva.prototype.CheckMobile=function() {
-  return device.ios() || 
-         device.iphone() || 
-         device.ipad() || 
-         device.android() ||
-         device.androidPhone() ||
-         device.androidTablet() ||
-         device.windowsPhone() ||
-         device.mobile() ||
-         device.tablet();
+ViewKonva.prototype.MobileTrue = function(callBack) {
+  var _this = this;
+  _this.CheckMobile = (
+        device.ios() || 
+        device.iphone() || 
+        device.ipad() || 
+        device.android() ||
+        device.androidPhone() ||
+        device.androidTablet() ||
+        device.windowsPhone() ||
+        device.mobile() ||
+        device.tablet()
+  );
+
+  if (_this.CheckMobile) callBack(_this.CheckMobile);
+
+  return _this;
+};
+
+ViewKonva.prototype.MobileFalse = function(callBack) {
+  var _this = this;
+
+  if (!_this.CheckMobile) callBack(_this.CheckMobile);
+
+  return _this;
+};
+
+
+//--------------------------------------------------
+// Custom prototypes
+
+ViewKonva.prototype.Font = function(node) {
+  var _this = this;
+  node
+  .fontSize(_this.FontSize)
+  .fontFamily(_this.FontFamily)
+  .shadowColor(_this.ShadowColorText)
+  .fill(_this.ColorItemMenu)
+  .opacity(0);
+};
+
+ViewKonva.prototype.LinesItemMenu = function(node) {
+  var _this = this;
+  node
+  .stroke(_this.ColorItemMenu)
+  .strokeWidth(_this.BorderLineItemMenu);
+};
+
+ViewKonva.prototype.LinesOther = function(node) {
+  var _this = this;
+  node
+  .stroke(_this.ColorOtherCircles)
+  .strokeWidth(_this.BorderLineOther);
 };

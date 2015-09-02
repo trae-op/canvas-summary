@@ -1,59 +1,93 @@
-
-App.Models.Groups = [];
 App.Models.Layers = [
   {
     id: 'layerMain'
-  },
-
-
-  {
-    id: 'layerItemMenu'
-  },
-  {
-    id: 'layerItemText'
-  },
-
-
-  {
-    id: 'layerContactsPreview'
-  },
-  {
-    id: 'layerContactsText'
-  },
-
-
-  {
-    id: 'layerSkillPreview'
-  },
-
-
-  {
-    id: 'layerCompanyPreview'
-  },
-  {
-    id: 'layerCompanyText'
-  },
-
-
-  {
-    id: 'layerProjects'
   }
 ];
 
-App.Models.ItemsMenu = [
+App.Models.Groups = [
+  {
+    id: 'groupLineItemsMenu'
+  },
+  {
+    id: 'groupCircleItemsMenu'
+  },
+  {
+    id: 'groupLineTextItemMenu'
+  },
+  {
+    id: 'groupTextItemMenu'
+  },
+  {
+    id: 'groupShowLineItemMenu'
+  },
+  {
+    id: 'groupShowPreviewItemMenu'
+  },
+
+
+
+
+  {
+    id: 'groupOtherCircles'
+  },
+  {
+    id: 'groupOtherLines'
+  },
+
+
+
+  {
+    id: 'groupConnectingLine'
+  },
+
+
+
+  {
+    id: 'groupPreview-skills'
+  },
+  {
+    id: 'groupPreview-company'
+  },
+  {
+    id: 'groupPreview-contacts'
+  },
+
+
+  {
+    id: 'groupProject-ffw'
+  },
+  {
+    id: 'groupProject-placeview'
+  },
+
+
+
+  {
+    id: 'groupTextContent-company'
+  },
+  {
+    id: 'groupTextContent-contacts'
+  },
+  {
+    id: 'groupTextContent-skills'
+  }
+
+];
+
+
+App.Models.Data = [
   {
     text: 'Компания / Проекты',
     image: 'img/projects.jpg',
     x: 70,
     y: 3,
-    url: 'projects',
-    projects: [
-
+    url: 'company',
+    company: [
       {
-        description: 'Placeview.in - \nИнтерактивные \nвиртуальные туры \nновый формат \nдля бизнеса',
+        text: 'Placeview.in - \nИнтерактивные \nвиртуальные туры \nновый формат \nдля бизнеса',
         image: 'img/placeview.png',
-        name: 'placeview',
-        projectsCompany: [
+        id: 'placeview',
+        projects: [
           {
             link: 'http://placeview.in',
             image: 'img/placeview.png'
@@ -66,10 +100,10 @@ App.Models.ItemsMenu = [
       },
 
       {
-        description: 'FFW - \nмеждународная \nИТ-компания, \nпредоставляющая \nполный спектр \nуслуг web-агентства.',
+        text: 'FFW - \nмеждународная \nИТ-компания, \nпредоставляющая \nполный спектр \nуслуг web-агентства.',
         image: 'img/ffw.png',
-        name: 'ffw',
-        projectsCompany: [
+        id: 'ffw',
+        projects: [
           {
             link: 'http://malmo.se',
             image: 'img/malmo.png'
@@ -93,17 +127,44 @@ App.Models.ItemsMenu = [
     image: 'img/skills.jpg',
     x: 90,
     y: 1.8,
-    url: 'skill',
-    skill: [
-      'img/sass.png',
-      'img/javascript.png',
-      'img/jquery.png',
-      'img/angularjs.png',
-      'img/backbonejs.png',
-      'img/css3.png',
-      'img/html5.png',
-      'img/gulp.png',
-      'img/konvajs.png'
+    url: 'skills',
+    skills: [
+      {
+        image: 'img/sass.png',
+        text: 'SASS'
+      },
+      {
+        image: 'img/javascript.png' ,
+        text: 'JS'
+      },
+      {
+        image: 'img/jquery.png',
+        text: 'jQuery'
+      },
+      {
+        image: 'img/angularjs.png',
+        text: 'Angular.js'
+      },
+      {
+        image: 'img/backbonejs.png',
+        text: 'Backbone.js'
+      },
+      {
+        image: 'img/css3.png',
+        text: 'CSS3'
+      },
+      {
+        image: 'img/html5.png',
+        text: 'HTML5'
+      },
+      {
+        image: 'img/gulp.png',
+        text: 'Gulp'
+      },
+      {
+        image: 'img/konvajs.png',
+        text: 'Konva.js'
+      }   
     ]
   },
   //------------------------------------
