@@ -21,7 +21,7 @@ ViewKonva.prototype.TextContent = function() {
       _this.Font(shape);
 
 	    _this.Group('groupTextContent-' + shape.name()).add(shape);
-			_this.Layer('layerMain').add(
+			_this.Layer('layerText').add(
 				_this.Group('groupTextContent-' + shape.name())
 			);
 
@@ -62,5 +62,6 @@ ViewKonva.prototype.HoverTextContent = function(thisPreview, index, data, cursor
     opacity: opacity
   }).play(); 
 
+	_this.Layer('layerText').draw();
 	_this.Layer('layerMain').draw();
 };

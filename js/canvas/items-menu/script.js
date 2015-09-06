@@ -162,7 +162,7 @@ ViewKonva.prototype.TextItemMenu = function() {
     callBack: function(shape, index) {
       _this.Font(shape);
 	    _this.Group('groupTextItemMenu').add(shape);
-			_this.Layer('layerMain').add(
+			_this.Layer('layerText').add(
 				_this.Group('groupTextItemMenu')
 			);
 
@@ -196,6 +196,8 @@ ViewKonva.prototype.AnimateLineTextItemMenu = function(index, x, y) {
 		      	.x(x + 28)
 		      	.y(y - 42)
 		      	.opacity(1);
+
+            _this.Layer('layerText').draw();
 
 		      }
 		    }).play();

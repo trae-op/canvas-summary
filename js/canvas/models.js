@@ -1,6 +1,9 @@
 App.Models.Layers = [
   {
     id: 'layerMain'
+  },
+  {
+    id: 'layerText'
   }
 ];
 
@@ -144,11 +147,11 @@ App.Models.Data = [
     skills: [
       {
         image: 'img/sass.png',
-        text: 'SASS'
+        text: 'Sass'
       },
       {
         image: 'img/javascript.png' ,
-        text: 'JS'
+        text: 'JavaScript'
       },
       {
         image: 'img/jquery.png',
@@ -164,11 +167,11 @@ App.Models.Data = [
       },
       {
         image: 'img/css3.png',
-        text: 'CSS3'
+        text: 'Css3'
       },
       {
         image: 'img/html5.png',
-        text: 'HTML5'
+        text: 'Html5'
       },
       {
         image: 'img/gulp.png',

@@ -47,7 +47,10 @@ App.Views.MyView = new ViewKonva(function(_this) {
     });
 
 
-    stage.add(layer('layerMain'));
+    stage.add( 
+        layer('layerMain'),
+        layer('layerText') 
+    );
 
     }
   };
