@@ -1,8 +1,4 @@
 
-ViewKonva.prototype.PrevProjectsCircles = [];
-ViewKonva.prototype.PrevProjectsPreview = [];
-
-ViewKonva.prototype.PrevActiveItemMenu = [];
 
 ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
 	var _this = this;

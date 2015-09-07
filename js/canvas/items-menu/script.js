@@ -1,9 +1,4 @@
 
-ViewKonva.prototype.EndPositionConnectingLine = [];
-
-ViewKonva.prototype.PrevCircles = [];
-ViewKonva.prototype.PrevLines = [];
-ViewKonva.prototype.PrevPreview = [];
 
 ViewKonva.prototype.CircleItemsMenu = function() {
 	var _this = this;
@@ -36,18 +31,18 @@ ViewKonva.prototype.CircleItemsMenu = function() {
 			_this.Group('groupCircleItemsMenu')
 		);
 
-			_this.MobileFalse(function() {
-				shape
-				.on('mouseover', function() {
-					_this.AnimationHoverPreviewItemMenu(index, x, y, 'pointer');
-				})
-				.on('mouseout', function() {
-					_this.AnimationHoverPreviewItemMenu(index, x, y, 'default');
-				})
-				.on('click', function() {
-					_this.CirclesLinesContent(index);
-				});
+        shape
+        .on('mouseover', function() {
+          _this.AnimationHoverPreviewItemMenu(index, x, y, 'pointer');
+        })
+        .on('mouseout', function() {
+          _this.AnimationHoverPreviewItemMenu(index, x, y, 'default');
+        })
+        .on('click', function() {
+          _this.CirclesLinesContent(index);
+        });
 
+			_this.MobileFalse(function() {
         new Konva.Tween({
           node: shape,
           duration: _this.SpeedAllCircles,

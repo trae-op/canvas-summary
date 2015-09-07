@@ -1,3 +1,22 @@
+
+// caching circles for projects
+ViewKonva.prototype.PrevProjectsCircles = [];
+// caching previews for projects
+ViewKonva.prototype.PrevProjectsPreview = [];
+
+// caching active item
+ViewKonva.prototype.PrevActiveItemMenu = [];
+
+// caching the line position between menu and content
+ViewKonva.prototype.EndPositionConnectingLine = [];
+
+// caching the content Circles
+ViewKonva.prototype.PrevCircles = [];
+// caching the content Lines
+ViewKonva.prototype.PrevLines = [];
+// caching the content Preview
+ViewKonva.prototype.PrevPreview = [];
+
 ViewKonva.prototype.Settings = function(object) {
     var _this = this;
 
