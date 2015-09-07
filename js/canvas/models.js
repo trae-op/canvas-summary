@@ -93,23 +93,7 @@ App.Models.Data = [
     url: 'company',
     company: [
       {
-        text: 'Placeview.in - \nИнтерактивные \nвиртуальные туры \nновый формат \nдля бизнеса.\n\n09.2014 - 08.2015',
-        image: 'img/placeview.png',
-        id: 'placeview',
-        projects: [
-          {
-            link: 'http://placeview.in',
-            image: 'img/placeview.png'
-          },
-          {
-            link: 'http://rainbowcore.it',
-            image: 'img/rainbowcore.png'
-          }
-        ]
-      },
-
-      {
-        text: 'FFW - \nмеждународная \nIТ-компания, \nпредоставляющая \nполный спектр \nуслуг web-агентства.\n\n05.2013 - 08.2014',
+        text: 'FFW - \nмеждународная \nIТ-компания, \nпредоставляющая \nполный спектр \nуслуг web-агентства.\n\n09.2014 - 08.2015',
         image: 'img/ffw.png',
         id: 'ffw',
         projects: [
@@ -124,6 +108,21 @@ App.Models.Data = [
           {
             link: 'http://pattydoo.de/blog',
             image: 'img/pattydoo.png'
+          }
+        ]
+      },
+      {
+        text: 'Placeview.in - \nИнтерактивные \nвиртуальные туры \nновый формат \nдля бизнеса.\n\n05.2013 - 08.2014',
+        image: 'img/placeview.png',
+        id: 'placeview',
+        projects: [
+          {
+            link: 'http://placeview.in',
+            image: 'img/placeview.png'
+          },
+          {
+            link: 'http://rainbowcore.it',
+            image: 'img/rainbowcore.png'
           }
         ]
       },
