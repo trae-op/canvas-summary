@@ -93,7 +93,7 @@ App.Models.Data = [
     url: 'company',
     company: [
       {
-        text: 'FFW - \nмеждународная \nIТ-компания, \nпредоставляющая \nполный спектр \nуслуг web-агентства.\n\n09.2014 - 08.2015',
+        text: 'FFW - \nмеждународная \nIТ-компания, \nпредоставляющая \nполный спектр \nуслуг web-агентства.\n09.2014 - 08.2015',
         image: 'img/ffw.png',
         id: 'ffw',
         projects: [
@@ -112,7 +112,7 @@ App.Models.Data = [
         ]
       },
       {
-        text: 'Placeview.in - \nИнтерактивные \nвиртуальные туры \nновый формат \nдля бизнеса.\n\n05.2013 - 08.2014',
+        text: 'Placeview.in - \nИнтерактивные \nвиртуальные туры \nновый формат \nдля бизнеса.\n05.2013 - 08.2014',
         image: 'img/placeview.png',
         id: 'placeview',
         projects: [
@@ -127,7 +127,7 @@ App.Models.Data = [
         ]
       },
       {
-        text: 'Palatanaroda.com\n\n01.2012 - 04.2013',
+        text: 'Palatanaroda.com\n01.2012 - 04.2013',
         image: 'img/palatanaroda.png',
         id: 'palatanaroda',
         projects: [

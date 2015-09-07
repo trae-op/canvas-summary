@@ -43,16 +43,16 @@ ViewKonva.prototype.HoverTextContent = function(thisPreview, index, data, cursor
 
 	if (cursor === 'pointer') {
 		thisPreview.setZIndex(100);
-		endPosition = thisPreview.y() - (groupTextContent.height() - 20);
+		endPosition = thisPreview.y() - ((groupTextContent.height()/2) - 20);
 		opacity = 1;
 		groupTextContent
 		.show()
 		.x(  (thisPreview.x() - groupTextContent.width()) - 15  )
-		.y(thisPreview.y() - (groupTextContent.height() - 15));
+		.y(thisPreview.y() - ((groupTextContent.height()/2) - 15));
 
 	} else if (cursor === 'default') {
 		thisPreview.setZIndex(1);
-		endPosition = thisPreview.y() - (groupTextContent.height() - 15);
+		endPosition = thisPreview.y() - ((groupTextContent.height()/2) - 15);
 		opacity = 0;
 	}
 

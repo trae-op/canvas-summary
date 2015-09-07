@@ -20,13 +20,13 @@ App.Views.MyView = new ViewKonva(function(_this) {
     	
     	colorItemMenu: '#fff',
     	borderLineItemMenu: 1,
-    	shadowActiveItemMenu: '#000',
+    	backgroundActiveItemMenu: '#888',
         borderActiveItemMenu: 2,
     	radiusItemMenu: 15,
 
-    	fontSize: 12,
-    	fontFamily: 'Verdana',
-    	shadowColorText: '#000',
+    	fontSize: 14,
+    	fontFamily: 'Courier New',
+    	shadowColorText: '#333',
 
     	speedLineItemMenu: 0.1,
     	borderPreviewMenu: 4,
@@ -35,14 +35,14 @@ App.Views.MyView = new ViewKonva(function(_this) {
     	flagHoverItemMenu: false,
     	
     	numberOtherCircles: 40,
-    	colorOtherCircles: '#888',
+    	colorOtherCircles: '#777',
     	radiusOtherCircle: 5,
     	borderLineOther: 0.3,
 
     	borderLineContent: 3,
     	radiusCirclesContent: 27,
     	hoverTextAnimate: 0.3,
-        shadowProjects: 'red', 
+        borderProjects: '#ccc', 
 
         idClose: 'btn-close',
         addClass: 'open-close'

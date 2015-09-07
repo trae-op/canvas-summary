@@ -14,6 +14,22 @@ ViewKonva.prototype.ButtonClose = function() {
 };
 
 
+ViewKonva.prototype.NullingProjectContent = function(groupOtherCircles) {
+	var _this = this;
+	_this.AllElements(_this.PrevProjectsCircles, function(dataClose, indexClose) {
+		// othe circles projects close
+		groupOtherCircles[dataClose]
+		.stroke(false)
+		.radius(_this.RadiusOtherCircle);
+	})
+	.AllElements(_this.PrevProjectsPreview, function(dataClose, indexClose) {
+		// othe preview projects close
+		dataClose.hide();
+	});	
+
+	return _this;
+};
+
 ViewKonva.prototype.Nulling = function() {
 	var _this = this;
 	var groupOtherCircles = _this.Group('groupOtherCircles').children;
@@ -29,32 +45,19 @@ ViewKonva.prototype.Nulling = function() {
 		groupOtherLines[data]
 			.strokeWidth(_this.BorderLineOther);
 
-	});
-
+	})
 	// previews close
-	_this.AllElements(_this.PrevPreview, function(data, indexData) {
+	.AllElements(_this.PrevPreview, function(data, indexData) {
 		_this.Group('groupPreview-' + data[1]).children[data[0]]
 			.hide();
-	});
-
-	_this.AllElements(_this.PrevProjectsPreview, function(dataClose, indexClose) {
-		// other preview projects close
-		dataClose.hide();
-	});
-
-	_this.AllElements(_this.PrevProjectsCircles, function(dataClose, indexClose) {
-		// other circles projects close
-		groupOtherCircles[dataClose]
-		.shadowColor(false)
-		.radius(_this.RadiusOtherCircle);
-	});		
+	})
+	// Nulling project content
+	.NullingProjectContent(groupOtherCircles);	
 
 	// shadow active close
 	if (_this.PrevActiveItemMenu[0])
 	_this.PrevActiveItemMenu[0]
-		.shadowColor(false)
-		.stroke(false)
-		.strokeWidth(false);
+		.fill(_this.ColorItemMenu);
 
 	// nulling array
 	_this.PrevCircles.splice(0, _this.PrevCircles.length);

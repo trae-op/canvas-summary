@@ -40,9 +40,7 @@ ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
 
 	// shadow active
 	groupCircleItemsMenu[index]
-		.shadowColor(_this.ShadowActiveItemMenu)
-		.stroke(_this.ShadowActiveItemMenu)
-		.strokeWidth(_this.BorderActiveItemMenu);
+		.fill(_this.BackgroundActiveItemMenu);
 
 	_this.PrevActiveItemMenu.push(groupCircleItemsMenu[index]);
 
@@ -106,7 +104,6 @@ ViewKonva.prototype.PreviewProjects = function() {
 };
 
 
-
 ViewKonva.prototype.ShowProjectContent = function(thisPreview, data) {
 	var _this = this;
 	var randomPosition = 0|(Math.random() * 15);
@@ -114,24 +111,14 @@ ViewKonva.prototype.ShowProjectContent = function(thisPreview, data) {
 
 	if (!thisPreview.id()) return;
 
-	_this.AllElements(_this.PrevProjectsCircles, function(dataClose, indexClose) {
-		// othe circles projects close
-		groupOtherCircles[dataClose]
-		.shadowColor(false)
-		.radius(_this.RadiusOtherCircle);
-	})
-	.AllElements(_this.PrevProjectsPreview, function(dataClose, indexClose) {
-		// othe preview projects close
-		dataClose.hide();
-	});
+	// Nulling project content
+	_this.NullingProjectContent(groupOtherCircles)
 
-	_this.PrevProjectsCircles.splice(0, _this.PrevProjectsCircles.length);
-	_this.PrevProjectsPreview.splice(0, _this.PrevProjectsPreview.length);
-
-	_this.AllElements(_this.Group('groupProject-' + thisPreview.id()).children, function(dataProjects, indexProjects) {
+	.AllElements(_this.Group('groupProject-' + thisPreview.id()).children, function(dataProjects, indexProjects) {
 		var position = _this.PrevCircles[1] + randomPosition + indexProjects + data[data.url].length;
+		//console.log(position);
 		groupOtherCircles[position]
-			.shadowColor(_this.ShadowProjects)
+			.stroke(_this.BorderProjects)
 			.radius(_this.RadiusCirclesContent);
 
 		dataProjects
