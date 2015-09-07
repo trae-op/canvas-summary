@@ -21,6 +21,7 @@ App.Views.MyView = new ViewKonva(function(_this) {
     	colorItemMenu: '#fff',
     	borderLineItemMenu: 1,
     	shadowActiveItemMenu: '#000',
+        borderActiveItemMenu: 2,
     	radiusItemMenu: 15,
 
     	fontSize: 12,
@@ -41,6 +42,7 @@ App.Views.MyView = new ViewKonva(function(_this) {
     	borderLineContent: 3,
     	radiusCirclesContent: 27,
     	hoverTextAnimate: 0.3,
+        shadowProjects: 'red', 
 
         idClose: 'btn-close',
         addClass: 'open-close'
@@ -48,6 +50,7 @@ App.Views.MyView = new ViewKonva(function(_this) {
 
 
     stage.add( 
+        layer('layerLines'),
         layer('layerMain'),
         layer('layerText') 
     );

@@ -3,6 +3,9 @@ App.Models.Layers = [
     id: 'layerMain'
   },
   {
+    id: 'layerLines'
+  },
+  {
     id: 'layerText'
   }
 ];

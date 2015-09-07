@@ -6,7 +6,8 @@ ViewKonva.prototype.ButtonClose = function() {
 		window.location.hash = '/';
 		document.getElementById(_this.IdClose).classList.remove(_this.AddClass);
 		_this.Nulling();
-		_this.Layer('layerMain').draw();												
+		_this.Layer('layerMain').draw();
+		_this.Layer('layerLines').draw();												
 	});
 
 	return _this;
@@ -37,15 +38,23 @@ ViewKonva.prototype.Nulling = function() {
 	});
 
 	_this.AllElements(_this.PrevProjectsPreview, function(dataClose, indexClose) {
-		// othe preview projects close
+		// other preview projects close
 		dataClose.hide();
 	});
 
 	_this.AllElements(_this.PrevProjectsCircles, function(dataClose, indexClose) {
-		// othe circles projects close
+		// other circles projects close
 		groupOtherCircles[dataClose]
+		.shadowColor(false)
 		.radius(_this.RadiusOtherCircle);
 	});		
+
+	// shadow active close
+	if (_this.PrevActiveItemMenu[0])
+	_this.PrevActiveItemMenu[0]
+		.shadowColor(false)
+		.stroke(false)
+		.strokeWidth(false);
 
 	// nulling array
 	_this.PrevCircles.splice(0, _this.PrevCircles.length);
@@ -53,6 +62,7 @@ ViewKonva.prototype.Nulling = function() {
 	_this.PrevPreview.splice(0, _this.PrevPreview.length);
 	_this.PrevProjectsCircles.splice(0, _this.PrevProjectsCircles.length);
 	_this.PrevProjectsPreview.splice(0, _this.PrevProjectsPreview.length);
+	_this.PrevActiveItemMenu.splice(0, _this.PrevActiveItemMenu.length);
 
 	return _this;
 };

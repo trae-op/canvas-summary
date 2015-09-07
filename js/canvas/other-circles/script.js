@@ -77,7 +77,7 @@ ViewKonva.prototype.OtherLines = function() {
     	]);	
 
 	    _this.Group('groupOtherLines').add(shape);
-			_this.Layer('layerMain').add(
+			_this.Layer('layerLines').add(
 				_this.Group('groupOtherLines')
 			);
 
@@ -126,7 +126,7 @@ ViewKonva.prototype.ConnectingLine = function() {
     	]);
 
 	    _this.Group('groupConnectingLine').add(shape);
-			_this.Layer('layerMain').add(
+			_this.Layer('layerLines').add(
 				_this.Group('groupConnectingLine')
 			);
 

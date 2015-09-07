@@ -76,7 +76,9 @@ ViewKonva.prototype.ResizeScreenOnOff = function(value) {
 
 // Performs specific actions for each model
 ViewKonva.prototype.AllElements = function(array, callback){
+  var _this = this;
   array.forEach(callback);
+  return _this;
 }
 
 // Shapes
@@ -96,6 +98,8 @@ ViewKonva.prototype.Shapes = function(object){
     _this[typeShape](object.data, function(data, index){
       object.callBack(new Konva[object.shape](data), index);
     });
+
+  return _this
 }
 
 ViewKonva.prototype.DefoultallElements = function(array, callback){
@@ -149,8 +153,12 @@ ViewKonva.prototype.Screen = function(value, callBack) {
 
 // for event 'resize'
 ViewKonva.prototype.Events = function(element, event, anons){
+  var _this = this
+
   if(element.addEventListener) element.addEventListener(event, anons, false);
   else element.attachEvent(event, anons);
+
+  return _this
 }
 
 // event 'resize' for Responsive
@@ -271,7 +279,10 @@ ViewKonva.prototype.Font = function(node) {
   .fontFamily(_this.FontFamily)
   .shadowColor(_this.ShadowColorText)
   .fill(_this.ColorItemMenu)
+  .hide()
   .opacity(0);
+
+  return _this;
 };
 
 ViewKonva.prototype.LinesItemMenu = function(node) {
@@ -279,6 +290,8 @@ ViewKonva.prototype.LinesItemMenu = function(node) {
   node
   .stroke(_this.ColorItemMenu)
   .strokeWidth(_this.BorderLineItemMenu);
+
+  return _this;
 };
 
 ViewKonva.prototype.LinesOther = function(node) {
@@ -286,4 +299,6 @@ ViewKonva.prototype.LinesOther = function(node) {
   node
   .stroke(_this.ColorOtherCircles)
   .strokeWidth(_this.BorderLineOther);
+
+  return _this;
 };

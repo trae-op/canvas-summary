@@ -46,6 +46,7 @@ ViewKonva.prototype.HoverTextContent = function(thisPreview, index, data, cursor
 		endPosition = thisPreview.y() - (groupTextContent.height() - 20);
 		opacity = 1;
 		groupTextContent
+		.show()
 		.x(  (thisPreview.x() - groupTextContent.width()) - 15  )
 		.y(thisPreview.y() - (groupTextContent.height() - 15));
 
@@ -59,7 +60,11 @@ ViewKonva.prototype.HoverTextContent = function(thisPreview, index, data, cursor
     node: groupTextContent,
     duration: _this.HoverTextAnimate,
     y: endPosition,
-    opacity: opacity
+    opacity: opacity,
+    onFinish: function() {
+    	if (cursor === 'default')
+    	groupTextContent.hide();
+    }
   }).play(); 
 
 	_this.Layer('layerText').draw();

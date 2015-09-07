@@ -10,13 +10,13 @@ ViewKonva.prototype.Settings = function(object) {
     _this.NumberOtherCircles = object.numberOtherCircles;
     _this.BorderLineOther = object.borderLineOther;
     _this.RadiusOtherCircle = object.radiusOtherCircle;
-    _this.BorderLineContent = object.borderLineContent;
 
     _this.BorderLineItemMenu = object.borderLineItemMenu;
     _this.ColorItemMenu = object.colorItemMenu;
     _this.RadiusItemMenu = object.radiusItemMenu;
     _this.ShadowActiveItemMenu = object.shadowActiveItemMenu;
     _this.SpeedAllCircles = object.speedAllCircles;
+    _this.BorderActiveItemMenu = object.borderActiveItemMenu;
 
     _this.FontSize = object.fontSize;
     _this.FontFamily = object.fontFamily;
@@ -30,8 +30,10 @@ ViewKonva.prototype.Settings = function(object) {
 
     _this.FlagHoverItemMenu = object.flagHoverItemMenu;
 
+    _this.BorderLineContent = object.borderLineContent;
     _this.RadiusCirclesContent = object.radiusCirclesContent;
     _this.HoverTextAnimate = object.hoverTextAnimate;
+    _this.ShadowProjects = object.shadowProjects;
 
     _this.IdClose = object.idClose;
     _this.AddClass = object.addClass;

@@ -100,7 +100,7 @@ ViewKonva.prototype.LineItemsMenu = function() {
 
 
 	    _this.Group('groupLineItemsMenu').add(shape);
-			_this.Layer('layerMain').add(
+			_this.Layer('layerLines').add(
 				_this.Group('groupLineItemsMenu')
 			);
 
@@ -138,7 +138,7 @@ ViewKonva.prototype.LineTextItemMenu = function() {
     callBack: function(shape, index) {
     	_this.LinesItemMenu(shape);
 	    _this.Group('groupLineTextItemMenu').add(shape);
-			_this.Layer('layerMain').add(
+			_this.Layer('layerLines').add(
 				_this.Group('groupLineTextItemMenu')
 			);
     }
@@ -195,6 +195,7 @@ ViewKonva.prototype.AnimateLineTextItemMenu = function(index, x, y) {
 		      	groupTextItemMenu
 		      	.x(x + 28)
 		      	.y(y - 42)
+            .show()
 		      	.opacity(1);
 
             _this.Layer('layerText').draw();

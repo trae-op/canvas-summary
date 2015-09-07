@@ -2,21 +2,24 @@
 ViewKonva.prototype.PrevProjectsCircles = [];
 ViewKonva.prototype.PrevProjectsPreview = [];
 
+ViewKonva.prototype.PrevActiveItemMenu = [];
+
 ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
 	var _this = this;
 	var thisData = _this.Data[index];
 	var randomPosition = 0|(Math.random() * 15);
 	var groupOtherCircles = _this.Group('groupOtherCircles').children;
 	var groupOtherLines = _this.Group('groupOtherLines').children;
+	var groupCircleItemsMenu = _this.Group('groupCircleItemsMenu').children;
 
 	window.location.hash = '/' + (urlAdress ? urlAdress : thisData.url);
 
 	document.getElementById(_this.IdClose).classList.add(_this.AddClass);
 
 	// Nulling array
-	_this.Nulling();
-
-	_this.AllElements(thisData[thisData.url], function(data, indexData) {
+	_this.Nulling()
+	// open content
+	.AllElements(thisData[thisData.url], function(data, indexData) {
 		// othe circles
 		groupOtherCircles[indexData + randomPosition]
 			.radius(_this.RadiusCirclesContent);
@@ -39,7 +42,17 @@ ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
 			
 	});
 
+	// shadow active
+	groupCircleItemsMenu[index]
+		.shadowColor(_this.ShadowActiveItemMenu)
+		.stroke(_this.ShadowActiveItemMenu)
+		.strokeWidth(_this.BorderActiveItemMenu);
+
+	_this.PrevActiveItemMenu.push(groupCircleItemsMenu[index]);
+
 	_this.Layer('layerMain').draw();
+	_this.Layer('layerLines').draw();
+	
 
 };
 
@@ -108,10 +121,10 @@ ViewKonva.prototype.ShowProjectContent = function(thisPreview, data) {
 	_this.AllElements(_this.PrevProjectsCircles, function(dataClose, indexClose) {
 		// othe circles projects close
 		groupOtherCircles[dataClose]
+		.shadowColor(false)
 		.radius(_this.RadiusOtherCircle);
-	});
-
-	_this.AllElements(_this.PrevProjectsPreview, function(dataClose, indexClose) {
+	})
+	.AllElements(_this.PrevProjectsPreview, function(dataClose, indexClose) {
 		// othe preview projects close
 		dataClose.hide();
 	});
@@ -122,6 +135,7 @@ ViewKonva.prototype.ShowProjectContent = function(thisPreview, data) {
 	_this.AllElements(_this.Group('groupProject-' + thisPreview.id()).children, function(dataProjects, indexProjects) {
 		var position = _this.PrevCircles[1] + randomPosition + indexProjects + data[data.url].length;
 		groupOtherCircles[position]
+			.shadowColor(_this.ShadowProjects)
 			.radius(_this.RadiusCirclesContent);
 
 		dataProjects

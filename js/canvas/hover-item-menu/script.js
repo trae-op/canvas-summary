@@ -13,7 +13,7 @@ ViewKonva.prototype.ShowLineItemMenu = function() {
     callBack: function(shape, index) {
     	_this.LinesItemMenu(shape);
 	    _this.Group('groupShowLineItemMenu').add(shape);
-			_this.Layer('layerMain').add(
+			_this.Layer('layerLines').add(
 				_this.Group('groupShowLineItemMenu')
 			);
     }
@@ -76,6 +76,7 @@ ViewKonva.prototype.AnimationHoverPreviewItemMenu = function(index, x, y, cursor
 		endValueLineItemMenu = [x, y, x, y, x, y];
 		showHide = 'hide';
 		groupShowPreviewItemMenu[showHide]();
+		_this.Layer('layerMain').draw();
 	}
 
 	document.body.style.cursor = cursor;
@@ -93,6 +94,7 @@ ViewKonva.prototype.AnimationHoverPreviewItemMenu = function(index, x, y, cursor
         points: endValueLineItemMenu,
         onFinish: function() {
         	groupShowPreviewItemMenu[showHide]();
+        	_this.Layer('layerMain').draw();
         }
       }).play();
     }
