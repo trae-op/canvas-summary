@@ -66,6 +66,9 @@ ViewKonva.prototype.Nulling = function() {
 	_this.PrevProjectsCircles.splice(0, _this.PrevProjectsCircles.length);
 	_this.PrevProjectsPreview.splice(0, _this.PrevProjectsPreview.length);
 	_this.PrevActiveItemMenu.splice(0, _this.PrevActiveItemMenu.length);
+	_this.EndPositionCircles.splice(0, _this.EndPositionCircles.length);
+	_this.EndPositionConnectingLine.splice(0, _this.EndPositionConnectingLine.length);
 
 	return _this;
 };
+

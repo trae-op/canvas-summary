@@ -8,6 +8,13 @@ ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
 	var groupOtherLines = _this.Group('groupOtherLines').children;
 	var groupCircleItemsMenu = _this.Group('groupCircleItemsMenu').children;
 
+	if (!_this.BlockingURL(index)) {
+		// update other circles
+		_this.UpdatePositionCircles(groupOtherCircles, groupOtherLines);
+		return;
+	}
+
+
 	window.location.hash = '/' + (urlAdress ? urlAdress : thisData.url);
 
 	document.getElementById(_this.IdClose).classList.add(_this.AddClass);
@@ -55,6 +62,7 @@ ViewKonva.prototype.PreviewProjects = function() {
 
 	_this.AllElements(_this.Data, function(data, indexData) {
 
+	  if (!_this.BlockingURL(indexData)) return;
 	  _this.AllElements(data[data.url], function(dataUrl, indexUrl) {
 
 	  	if (dataUrl.projects) {
@@ -85,9 +93,15 @@ ViewKonva.prototype.PreviewProjects = function() {
 				    		window.open(dataProjects.link);
 				    	});
 
-					    _this.Group('groupProject-' + dataUrl.id).add(shape);
+				    	var checkGroup = _this.Group('groupProject-' + dataUrl.id);
+				    	if (!checkGroup) {
+				    		console.warn('Error groupProject-' + dataUrl.id + '!');
+				    		return;
+				    	}
+
+					    checkGroup.add(shape);
 							_this.Layer('layerMain').add(
-								_this.Group('groupProject-' + dataUrl.id)
+								checkGroup
 							);
 
 				    }
@@ -140,6 +154,8 @@ ViewKonva.prototype.PreviewContent = function() {
 	var _this = this;	
 
 	_this.AllElements(_this.Data, function(data, indexData) {
+
+		if (!_this.BlockingURL(indexData)) return;
 	  _this.AllElements(data[data.url], function(dataUrl, indexUrl) {
 
 		  _this.Shapes({
@@ -164,15 +180,90 @@ ViewKonva.prototype.PreviewContent = function() {
 		    		_this.ShowProjectContent(this, data);
 		    	});
 
-			    _this.Group('groupPreview-' + data.url).add(shape);
-					_this.Layer('layerMain').add(
-						_this.Group('groupPreview-' + data.url)
-					);
+		    	var checkGroup = _this.Group('groupPreview-' + data.url);
+		    	if (!checkGroup) {
+		    		console.warn('Error groupPreview-' + data.url + '!');
+		    		return;	
+		    	}
+
+				    checkGroup.add(shape);
+						_this.Layer('layerMain').add(
+							checkGroup
+						);
 		    }
 		  }); 
 	  });
 
 	});
+
+  return _this;
+};
+
+
+
+ViewKonva.prototype.UpdatePositionCircles = function(groupOtherCircles, groupOtherLines) {
+	var _this = this;
+	var groupConnectingLine = _this.Group('groupConnectingLine').children[0];
+
+	_this.Nulling()
+	.AllElements(groupOtherCircles, function(data, indexCircles) {
+
+		var x = (Math.random() * (_this.Stage.width() - (window.innerWidth/4))) + (window.innerWidth/4.5);
+    var y = (Math.random() * (_this.Stage.height() - (window.innerHeight/5))) + (window.innerHeight/10);
+
+    // end position first circle
+    _this.EndPositionCircles.push([x, y]);
+  	
+  	if (indexCircles === 0)
+  	_this.EndPositionConnectingLine.push({
+  		x: x,
+  		y: y
+  	});
+  
+    new Konva.Tween({
+      node: data,
+      duration: _this.SpeedAllCircles,
+      x: x,
+      y: y
+    }).play();
+
+	});
+
+	for (var i = 0; i < _this.NumberOtherCircles - 1; i++)
+    new Konva.Tween({
+      node: groupOtherLines[i],
+      duration: _this.SpeedAllCircles,
+      points: [
+    		_this.EndPositionCircles[i][0],
+    		_this.EndPositionCircles[i][1],
+
+    		_this.EndPositionCircles[i + 1][0],
+    		_this.EndPositionCircles[i + 1][1]
+      ]
+    }).play();
+
+  new Konva.Tween({
+    node: groupConnectingLine,
+    duration: _this.SpeedAllCircles,
+    points: [
+  		_this.Group('groupCircleItemsMenu').children[_this.Data.length - 1].x(),
+  		_this.Group('groupCircleItemsMenu').children[_this.Data.length - 1].y(),
+
+  		_this.EndPositionConnectingLine[0].x,
+  		_this.EndPositionConnectingLine[0].y
+    ],
+    onFinish: function() {
+	    var url = window.location.hash.replace(/#\//g, '');
+
+	    setTimeout(function() {
+	    	_this.AllElements(_this.Data, function(dataUrl, indexUrl) {
+		      if (url === dataUrl.url)
+		      _this.CirclesLinesContent(indexUrl, url);    		
+	    	});
+    	}, 50);
+
+    }
+  }).play();
 
   return _this;
 };

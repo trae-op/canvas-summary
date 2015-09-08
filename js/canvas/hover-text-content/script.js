@@ -5,6 +5,8 @@ ViewKonva.prototype.TextContent = function() {
 	var text = [];
 
 	_this.AllElements(_this.Data, function(data, indexData) {
+
+		if (_this.BlockingURL(indexData))
 	  _this.AllElements(data[data.url], function(dataUrl, indexUrl) {
 	  	text.push({
 	  		text: dataUrl.text,
@@ -20,9 +22,15 @@ ViewKonva.prototype.TextContent = function() {
       
       _this.Font(shape);
 
-	    _this.Group('groupTextContent-' + shape.name()).add(shape);
+      var checkGroup = _this.Group('groupTextContent-' + shape.name());
+      if (!checkGroup) {
+      	console.warn('Error groupTextContent-' + shape.name() + '!');
+      	return;
+      }
+      
+	    checkGroup.add(shape);
 			_this.Layer('layerText').add(
-				_this.Group('groupTextContent-' + shape.name())
+				checkGroup
 			);
 
     }

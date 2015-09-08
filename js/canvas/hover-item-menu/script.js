@@ -4,8 +4,11 @@ ViewKonva.prototype.ShowLineItemMenu = function() {
 	var _this = this;	
 	var lines = [];
 
-	for (var i = 0; i < _this.Data.length; i++)
+	for (var i = 0; i < _this.Data.length; i++) {
+
+		if (_this.BlockingURL(i))
 		lines.push({});
+	}
 
   _this.Shapes({
     shape: 'Line',
@@ -27,6 +30,8 @@ ViewKonva.prototype.ShowPreviewItemMenu = function() {
 	var _this = this;	
 
 	for (var i = 0; i < _this.Data.length; i++) {
+
+		if (_this.BlockingURL(i))
 	  _this.Shapes({
 	    shape: 'Image',
 	    data: [{
@@ -56,7 +61,9 @@ ViewKonva.prototype.ShowPreviewItemMenu = function() {
 ViewKonva.prototype.AnimationHoverPreviewItemMenu = function(index, x, y, cursor) {
 	var _this = this;	
 
-	if (!_this.FlagHoverItemMenu) return;
+	document.body.style.cursor = cursor;
+	
+	if (!_this.FlagHoverItemMenu || !_this.BlockingURL(index)) return;
 
 	var groupShowLineItemMenu = _this.Group('groupShowLineItemMenu').children[index];
 	var groupShowPreviewItemMenu = _this.Group('groupShowPreviewItemMenu').children[index];
@@ -79,7 +86,6 @@ ViewKonva.prototype.AnimationHoverPreviewItemMenu = function(index, x, y, cursor
 		_this.Layer('layerMain').draw();
 	}
 
-	document.body.style.cursor = cursor;
 
 	groupShowLineItemMenu.points(startValueLineItemMenu);
 

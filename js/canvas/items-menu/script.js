@@ -31,36 +31,37 @@ ViewKonva.prototype.CircleItemsMenu = function() {
 			_this.Group('groupCircleItemsMenu')
 		);
 
-        shape
-        .on('mouseover', function() {
-          _this.AnimationHoverPreviewItemMenu(index, x, y, 'pointer');
-        })
-        .on('mouseout', function() {
-          _this.AnimationHoverPreviewItemMenu(index, x, y, 'default');
-        })
-        .on('click', function() {
-          _this.CirclesLinesContent(index);
-        });
+    shape
+    .on('mouseover', function() {
+      _this.AnimationHoverPreviewItemMenu(index, x, y, 'pointer');
+    })
+    .on('mouseout', function() {
+      _this.AnimationHoverPreviewItemMenu(index, x, y, 'default');
+    })
+    .on('click', function() {
+      _this.CirclesLinesContent(index);
+    });
 
-			_this.MobileFalse(function() {
-        new Konva.Tween({
-          node: shape,
-          duration: _this.SpeedAllCircles,
-          x: x,
-          y: y,
-          onFinish: function() {
-            var url = window.location.hash.replace(/#\//g, '');
-          	_this.FlagHoverItemMenu = true;
-          	_this.AnimateLineTextItemMenu(index, x, y);
+		_this.MobileFalse(function() {
+      new Konva.Tween({
+        node: shape,
+        duration: _this.SpeedAllCircles,
+        x: x,
+        y: y,
+        onFinish: function() {
+          var url = window.location.hash.replace(/#\//g, '');
+        	_this.FlagHoverItemMenu = true;
+        	_this.AnimateLineTextItemMenu(index, x, y);
 
-            setTimeout(function() {
-              if (url === _this.Data[index].url)
-              _this.CirclesLinesContent(index, url);
-            }, 100);
+          if (_this.BlockingURL(index))
+          setTimeout(function() {
+            if (url === _this.Data[index].url)
+            _this.CirclesLinesContent(index, url);
+          }, 100);
 
-          }
-        }).play();
-			});
+        }
+      }).play();
+		});
 
     }
   });
@@ -201,4 +202,11 @@ ViewKonva.prototype.AnimateLineTextItemMenu = function(index, x, y) {
       }
     }).play();
 
+};
+
+
+
+ViewKonva.prototype.BlockingURL = function(index) {
+  var _this = this;
+  return _this.Data[index].url;
 };
