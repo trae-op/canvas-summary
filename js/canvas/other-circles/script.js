@@ -6,44 +6,23 @@ ViewKonva.prototype.OtherCircles = function() {
 	_this.EndPositionCircles = [];
 
 	for (var i = 0; i < _this.NumberOtherCircles; i++)
-		circle.push({
-			radius: _this.RadiusOtherCircle,
-			fill:_this.ColorOtherCircles,
-			x: (Math.random() * _this.Stage.width()), 
-			y: (Math.random() * _this.Stage.height())
-		});
-
+		circle.push({});
 
 	_this.Shapes({
 	  shape: 'Circle',
 	  data: circle,
 	  callBack: function(shape, index) {
 
-			var x = (Math.random() * (_this.Stage.width() - (window.innerWidth/4))) + (window.innerWidth/4.5);
-      var y = (Math.random() * (_this.Stage.height() - (window.innerHeight/5))) + (window.innerHeight/10);
-
-
-		  if (index === 0)
-	    	_this.EndPositionConnectingLine.push({
-	    		x: x,
-	    		y: y
-	    	});
-
-		  _this.EndPositionCircles.push([x, y]);
+	  	shape
+	  	.radius(_this.RadiusOtherCircle)
+	  	.fill(_this.ColorOtherCircles)
+	  	.x(Math.random() * _this.Stage.width())
+	  	.y(Math.random() * _this.Stage.height());
 
 		  _this.Group('groupOtherCircles').add(shape);
 			_this.Layer('layerMain').add(
 				_this.Group('groupOtherCircles')
 			);
-
-			_this.MobileFalse(function() {
-	      new Konva.Tween({
-	        node: shape,
-	        duration: _this.SpeedAllCircles,
-	        x: x,
-	        y: y
-	      }).play();
-			});
 
 	  }
 	});
@@ -81,20 +60,6 @@ ViewKonva.prototype.OtherLines = function() {
 				_this.Group('groupOtherLines')
 			);
 
-			_this.MobileFalse(function() {
-        new Konva.Tween({
-          node: shape,
-          duration: _this.SpeedAllCircles,
-          points: [
-		    		_this.EndPositionCircles[index][0],
-		    		_this.EndPositionCircles[index][1],
-
-		    		_this.EndPositionCircles[index + 1][0],
-		    		_this.EndPositionCircles[index + 1][1]
-          ]
-        }).play();
-			});
-
     }
   });
 
@@ -129,20 +94,6 @@ ViewKonva.prototype.ConnectingLine = function() {
 			_this.Layer('layerLines').add(
 				_this.Group('groupConnectingLine')
 			);
-
-			_this.MobileFalse(function() {
-        new Konva.Tween({
-          node: shape,
-          duration: _this.SpeedAllCircles,
-          points: [
-		    		_this.EndPositionConnectingLine[0].x,
-		    		_this.EndPositionConnectingLine[0].y,
-
-		    		_this.EndPositionConnectingLine[1].x,
-		    		_this.EndPositionConnectingLine[1].y
-          ]
-        }).play();
-			});
 
     }
   });

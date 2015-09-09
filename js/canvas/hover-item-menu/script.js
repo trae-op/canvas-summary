@@ -63,7 +63,7 @@ ViewKonva.prototype.AnimationHoverPreviewItemMenu = function(index, x, y, cursor
 
 	document.body.style.cursor = cursor;
 	
-	if (!_this.FlagHoverItemMenu || !_this.BlockingURL(index)) return;
+	if (!_this.FlagHoverItemMenu || !_this.BlockingURL(index) || !_this.flagBlockingHover) return;
 
 	var groupShowLineItemMenu = _this.Group('groupShowLineItemMenu').children[index];
 	var groupShowPreviewItemMenu = _this.Group('groupShowPreviewItemMenu').children[index];

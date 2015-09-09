@@ -149,7 +149,9 @@ ViewKonva.prototype.Screen = function(value, callBack) {
       };
       checkScreen();
       _this.ResizeScreen.push(checkScreen);
-}
+
+  return _this;
+};
 
 // for event 'resize'
 ViewKonva.prototype.Events = function(element, event, anons){
@@ -301,4 +303,25 @@ ViewKonva.prototype.LinesOther = function(node) {
   .strokeWidth(_this.BorderLineOther);
 
   return _this;
+};
+
+
+ViewKonva.prototype.ValueEvents = function(oneEvent) {
+  var _this = this;
+  var result = '';
+  
+  _this.MobileTrue(function() {
+    if (oneEvent === 'click')
+      result = 'touchstart';
+    if (oneEvent === 'mouseover')
+      result = 'touchmove';
+    if (oneEvent === 'mouseout')
+      result = 'touchup';
+
+  }).MobileFalse(function() {
+    result = oneEvent;
+  });
+
+  return result;
+  
 };

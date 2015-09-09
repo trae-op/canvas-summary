@@ -10,7 +10,7 @@ ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
 
 	if (!_this.BlockingURL(index)) {
 		// update other circles
-		_this.UpdatePositionCircles(groupOtherCircles, groupOtherLines);
+		_this.UpdatePositionCircles();
 		return;
 	}
 
@@ -79,17 +79,17 @@ ViewKonva.prototype.PreviewProjects = function() {
 
 				    	shape
 				    	.hide()
-				    	.on('mouseover', function() {
+				    	.on(_this.ValueEvents('mouseover'), function() {
 				    		this.setZIndex(100);
 				    		document.body.style.cursor = 'pointer';
 				    		_this.Layer('layerMain').draw();
 				    	})
-				    	.on('mouseout', function() {
+				    	.on(_this.ValueEvents('mouseout'), function() {
 				    		this.setZIndex(1);
 				    		document.body.style.cursor = 'default';
 				    		_this.Layer('layerMain').draw();
 				    	})
-				    	.on('click', function() {
+				    	.on(_this.ValueEvents('click'), function() {
 				    		window.open(dataProjects.link);
 				    	});
 
@@ -169,14 +169,14 @@ ViewKonva.prototype.PreviewContent = function() {
 		    callBack: function(shape, index) {
 		    	shape
 		    	.hide()
-		    	.on('mouseover', function() {
+		    	.on(_this.ValueEvents('mouseover'), function() {
 		    		_this.HoverTextContent(this, indexUrl, data, 'pointer');
 		    	})
-		    	.on('mouseout', function() {
+		    	.on(_this.ValueEvents('mouseout'), function() {
 		    		_this.HoverTextContent(this, indexUrl, data, 'default');
 		    	});
 
-		    	shape.on('click', function() {
+		    	shape.on(_this.ValueEvents('click'), function() {
 		    		_this.ShowProjectContent(this, data);
 		    	});
 
@@ -199,12 +199,14 @@ ViewKonva.prototype.PreviewContent = function() {
   return _this;
 };
 
-
-
-ViewKonva.prototype.UpdatePositionCircles = function(groupOtherCircles, groupOtherLines) {
+ViewKonva.prototype.UpdatePositionCircles = function() {
 	var _this = this;
-	var groupConnectingLine = _this.Group('groupConnectingLine').children[0];
 
+	var groupOtherCircles = _this.Group('groupOtherCircles').children;
+	var groupOtherLines = _this.Group('groupOtherLines').children;
+
+	var groupConnectingLine = _this.Group('groupConnectingLine').children[0];
+	
 	_this.Nulling()
 	.AllElements(groupOtherCircles, function(data, indexCircles) {
 
@@ -246,8 +248,8 @@ ViewKonva.prototype.UpdatePositionCircles = function(groupOtherCircles, groupOth
     node: groupConnectingLine,
     duration: _this.SpeedAllCircles,
     points: [
-  		_this.Group('groupCircleItemsMenu').children[_this.Data.length - 1].x(),
-  		_this.Group('groupCircleItemsMenu').children[_this.Data.length - 1].y(),
+  		window.innerWidth/_this.Data[_this.Data.length - 1].x,
+  		window.innerHeight/_this.Data[_this.Data.length - 1].y,
 
   		_this.EndPositionConnectingLine[0].x,
   		_this.EndPositionConnectingLine[0].y
@@ -260,7 +262,7 @@ ViewKonva.prototype.UpdatePositionCircles = function(groupOtherCircles, groupOth
 		      if (url === dataUrl.url)
 		      _this.CirclesLinesContent(indexUrl, url);    		
 	    	});
-    	}, 50);
+    	}, 80);
 
     }
   }).play();

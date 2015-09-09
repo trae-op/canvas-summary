@@ -2,7 +2,7 @@
 ViewKonva.prototype.ButtonClose = function() {
 	var _this = this;
 	
-	_this.Events(document.getElementById(_this.IdClose), 'click', function() {
+	_this.Events(document.getElementById(_this.IdClose), _this.ValueEvents('click'), function() {
 		window.location.hash = '/';
 		document.getElementById(_this.IdClose).classList.remove(_this.AddClass);
 		_this.Nulling();

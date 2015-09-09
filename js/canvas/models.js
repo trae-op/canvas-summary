@@ -86,9 +86,9 @@ App.Models.Groups = [
 
 App.Models.Data = [
   {
-    text: 'Компания / Проекты',
+    text: 'Компания/Проекты',
     image: 'img/projects.jpg',
-    x: 70,
+    x: 10,
     y: 3,
     url: 'company',
     company: [
@@ -143,7 +143,7 @@ App.Models.Data = [
   {
     text: 'Опыт работы',
     image: 'img/skills.jpg',
-    x: 90,
+    x: 12,
     y: 1.8,
     url: 'skills',
     skills: [
@@ -188,7 +188,7 @@ App.Models.Data = [
   {
     text: 'Контакты',
     image: 'img/contacts.jpg',
-    x: 70,
+    x: 10,
     y: 1.3,
     url: 'contacts',
     contacts: [
@@ -204,7 +204,7 @@ App.Models.Data = [
   },
   {
     text: 'Обновить',
-    x: 90,
+    x: 15,
     y: 1.1,
     url: false
   }

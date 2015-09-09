@@ -75,6 +75,23 @@ ViewKonva.prototype.Settings = function(object) {
 
     .ConnectingLine()
 
+    .UpdatePositionItemMenu()
+
+    .UpdatePositionCircles()
+
     .ButtonClose();
+
+    _this.ResizeScreen.push(function(){
+      _this.UpdatePositionItemMenu();
+      _this.UpdatePositionCircles();
+      _this.UpdateLineTextItemMenu();
+    });
+
+    _this.Screen('max-width-900', function() {
+      _this.flagBlockingHover = false;
+    })
+    .Screen('min-width-900', function() {
+      _this.flagBlockingHover = true;
+    });
 
 };
