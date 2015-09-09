@@ -1,6 +1,6 @@
 
 
-ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
+ViewKonva.prototype.CirclesLinesContent = function(index) {
 	var _this = this;
 	var thisData = _this.Data[index];
 	var randomPosition = 0|(Math.random() * 10);
@@ -13,9 +13,6 @@ ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
 		_this.UpdatePositionCircles();
 		return;
 	}
-
-
-	window.location.hash = '/' + (urlAdress ? urlAdress : thisData.url);
 
 	document.getElementById(_this.IdClose).classList.add(_this.AddClass);
 
@@ -255,17 +252,22 @@ ViewKonva.prototype.UpdatePositionCircles = function() {
   		_this.EndPositionConnectingLine[0].y
     ],
     onFinish: function() {
-	    var url = window.location.hash.replace(/#\//g, '');
-
 	    setTimeout(function() {
-	    	_this.AllElements(_this.Data, function(dataUrl, indexUrl) {
-		      if (url === dataUrl.url)
-		      _this.CirclesLinesContent(indexUrl, url);    		
-	    	});
+	    	_this.ChangeURL();
     	}, 100);
-
     }
   }).play();
 
   return _this;
+};
+
+
+
+ViewKonva.prototype.ChangeURL = function() {
+  var _this = this;
+  var url = window.location.hash.replace(/#\//g, '');
+  _this.AllElements(_this.Data, function(dataUrl, indexUrl) {
+    if (url === dataUrl.url)
+    _this.CirclesLinesContent(indexUrl);       
+  });
 };

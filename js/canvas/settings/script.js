@@ -87,6 +87,10 @@ ViewKonva.prototype.Settings = function(object) {
 
     .ButtonClose();
 
+    _this.Events(window, 'hashchange', function() {
+      _this.ChangeURL();
+    });
+
     _this.ResizeScreen.push(function(){
       _this.UpdatePositionItemMenu()
         .UpdatePositionCircles()

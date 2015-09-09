@@ -40,7 +40,10 @@ ViewKonva.prototype.CircleItemsMenu = function() {
       _this.AnimationHoverPreviewItemMenu(index, x, y, 'default');
     })
     .on(_this.ValueEvents('click'), function() {
-      _this.CirclesLinesContent(index);
+      if (_this.BlockingURL(index))
+        window.location.hash = '/' + _this.Data[index].url;
+      else
+        _this.CirclesLinesContent(index);
     });
 
     new Konva.Tween({
@@ -49,10 +52,8 @@ ViewKonva.prototype.CircleItemsMenu = function() {
       x: x,
       y: y,
       onFinish: function() {
-        var url = window.location.hash.replace(/#\//g, '');
       	_this.FlagHoverItemMenu = true;
       	_this.AnimateLineTextItemMenu(index, x, y);
-
       }
     }).play();
 
