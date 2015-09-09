@@ -309,14 +309,14 @@ ViewKonva.prototype.LinesOther = function(node) {
 ViewKonva.prototype.ValueEvents = function(oneEvent) {
   var _this = this;
   var result = '';
-  
+
   _this.MobileTrue(function() {
     if (oneEvent === 'click')
       result = 'touchstart';
     if (oneEvent === 'mouseover')
       result = 'touchmove';
     if (oneEvent === 'mouseout')
-      result = 'touchup';
+      result = 'touchend';
 
   }).MobileFalse(function() {
     result = oneEvent;
