@@ -59,6 +59,8 @@ ViewKonva.prototype.Settings = function(object) {
 
     _this.MobileTrue(function() {
       _this.NumberOtherCircles = 25;
+      _this.WHpreviewItemMenu = 25;
+      _this.RadiusCirclesContent = 20;
     });
 
 
@@ -86,9 +88,9 @@ ViewKonva.prototype.Settings = function(object) {
     .ButtonClose();
 
     _this.ResizeScreen.push(function(){
-      _this.UpdatePositionItemMenu();
-      _this.UpdatePositionCircles();
-      _this.UpdateLineTextItemMenu();
+      _this.UpdatePositionItemMenu()
+        .UpdatePositionCircles()
+        .UpdateLineTextItemMenu();
     });
 
     _this.Screen('max-width-900', function() {

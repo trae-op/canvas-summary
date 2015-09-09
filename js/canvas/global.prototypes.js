@@ -185,9 +185,10 @@ ViewKonva.prototype.StyleElement = function(element, property){
 // replace width of the Canvas on the width of the Container
 ViewKonva.prototype.ScreenCanvas = function() {
   var _this = this;
-  var conteinerWidth = parseInt(this.StyleElement(_this.Stage.container(),'width'));
-  var conteinerHeight = parseInt(this.StyleElement(_this.Stage.container(),'height'));
-  _this.Stage.setWidth(conteinerWidth).setHeight(conteinerHeight);
+  var conteinerWidth = window.innerWidth;
+  var conteinerHeight = window.innerHeight;
+  _this.Stage.width(conteinerWidth);
+  _this.Stage.height(conteinerHeight);
 }
 
 // Set interval

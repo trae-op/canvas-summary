@@ -262,7 +262,7 @@ ViewKonva.prototype.UpdatePositionCircles = function() {
 		      if (url === dataUrl.url)
 		      _this.CirclesLinesContent(indexUrl, url);    		
 	    	});
-    	}, 80);
+    	}, 100);
 
     }
   }).play();

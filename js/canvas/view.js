@@ -21,7 +21,7 @@ App.Views.MyView = new ViewKonva(function(_this) {
     	colorItemMenu: '#fff',
     	borderLineItemMenu: 1,
     	backgroundActiveItemMenu: '#888',
-        borderActiveItemMenu: 2,
+      borderActiveItemMenu: 2,
     	radiusItemMenu: 15,
 
     	fontSize: 14,
@@ -42,10 +42,10 @@ App.Views.MyView = new ViewKonva(function(_this) {
     	borderLineContent: 3,
     	radiusCirclesContent: 27,
     	hoverTextAnimate: 0.3,
-        borderProjects: '#ccc', 
+      borderProjects: '#ccc', 
 
-        idClose: 'btn-close',
-        addClass: 'open-close'
+      idClose: 'btn-close',
+      addClass: 'open-close'
     });
 
 
