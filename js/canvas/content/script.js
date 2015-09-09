@@ -3,7 +3,7 @@
 ViewKonva.prototype.CirclesLinesContent = function(index, urlAdress) {
 	var _this = this;
 	var thisData = _this.Data[index];
-	var randomPosition = 0|(Math.random() * 15);
+	var randomPosition = 0|(Math.random() * 10);
 	var groupOtherCircles = _this.Group('groupOtherCircles').children;
 	var groupOtherLines = _this.Group('groupOtherLines').children;
 	var groupCircleItemsMenu = _this.Group('groupCircleItemsMenu').children;
@@ -120,7 +120,7 @@ ViewKonva.prototype.PreviewProjects = function() {
 
 ViewKonva.prototype.ShowProjectContent = function(thisPreview, data) {
 	var _this = this;
-	var randomPosition = 0|(Math.random() * 15);
+	var randomPosition = 0|(Math.random() * 10);
 	var groupOtherCircles = _this.Group('groupOtherCircles').children;
 
 	if (!thisPreview.id()) return;

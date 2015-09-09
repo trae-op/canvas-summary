@@ -311,10 +311,8 @@ ViewKonva.prototype.ValueEvents = function(oneEvent) {
   var result = '';
 
   _this.MobileTrue(function() {
-    if (oneEvent === 'click')
+    if (oneEvent === 'click' || oneEvent === 'mouseover')
       result = 'touchstart';
-    if (oneEvent === 'mouseover')
-      result = 'touchmove';
     if (oneEvent === 'mouseout')
       result = 'touchend';
 

@@ -57,6 +57,10 @@ ViewKonva.prototype.Settings = function(object) {
     _this.AddClass = object.addClass;
 
 
+    _this.MobileTrue(function() {
+      _this.NumberOtherCircles = 25;
+    });
+
 
     _this.CircleItemsMenu()
         .OtherCircles()

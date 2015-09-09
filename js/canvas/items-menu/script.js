@@ -43,20 +43,18 @@ ViewKonva.prototype.CircleItemsMenu = function() {
       _this.CirclesLinesContent(index);
     });
 
-		_this.MobileFalse(function() {
-      new Konva.Tween({
-        node: shape,
-        duration: _this.SpeedAllCircles,
-        x: x,
-        y: y,
-        onFinish: function() {
-          var url = window.location.hash.replace(/#\//g, '');
-        	_this.FlagHoverItemMenu = true;
-        	_this.AnimateLineTextItemMenu(index, x, y);
+    new Konva.Tween({
+      node: shape,
+      duration: _this.SpeedAllCircles,
+      x: x,
+      y: y,
+      onFinish: function() {
+        var url = window.location.hash.replace(/#\//g, '');
+      	_this.FlagHoverItemMenu = true;
+      	_this.AnimateLineTextItemMenu(index, x, y);
 
-        }
-      }).play();
-		});
+      }
+    }).play();
 
     }
   });
