@@ -97,10 +97,10 @@ ViewKonva.prototype.Settings = function(object) {
         .UpdateLineTextItemMenu();
     });
 
-    _this.Screen('max-width-900', function() {
+    _this.Screen('max-width-1200', function() {
       _this.flagBlockingHover = false;
     })
-    .Screen('min-width-900', function() {
+    .Screen('min-width-1200', function() {
       _this.flagBlockingHover = true;
     });
 
