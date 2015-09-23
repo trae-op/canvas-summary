@@ -80,52 +80,52 @@ var check=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     // }
 
     _this.MobileTrue(function() {
-       /* document.getElementById('for-mobile')
+        document.getElementById('for-mobile')
             .classList
-                .remove('close-mobile');*/
+                .remove('close-mobile');
+  
+    }).MobileFalse(function() {
 
-        alert('mobile');
-        //return;  
-    });
+        _this.CircleItemsMenu()
+            .OtherCircles()
+            .OtherLines()
 
-    _this.CircleItemsMenu()
-        .OtherCircles()
-        .OtherLines()
+        .PreviewProjects()
+            .PreviewContent()
 
-    .PreviewProjects()
-        .PreviewContent()
+        .LineItemsMenu()
+            .LineTextItemMenu()
+            .TextItemMenu()
+            .ShowLineItemMenu()
+            .ShowPreviewItemMenu()
 
-    .LineItemsMenu()
-        .LineTextItemMenu()
-        .TextItemMenu()
-        .ShowLineItemMenu()
-        .ShowPreviewItemMenu()
+        .TextContent()
 
-    .TextContent()
+        .ConnectingLine()
 
-    .ConnectingLine()
+        .UpdatePositionItemMenu()
 
-    .UpdatePositionItemMenu()
-
-    .UpdatePositionCircles()
-
-    .ButtonClose();
-
-    _this.Events(window, 'hashchange', function() {
-      _this.ChangeURL();
-    });
-
-    _this.ResizeScreen.push(function(){
-      _this.UpdatePositionItemMenu()
         .UpdatePositionCircles()
-        .UpdateLineTextItemMenu();
-    });
 
-    _this.Screen('max-width-1200', function() {
-      _this.flagBlockingHover = false;
-    })
-    .Screen('min-width-1200', function() {
-      _this.flagBlockingHover = true;
+        .ButtonClose();
+
+        _this.Events(window, 'hashchange', function() {
+          _this.ChangeURL();
+        });
+
+        _this.ResizeScreen.push(function(){
+          _this.UpdatePositionItemMenu()
+            .UpdatePositionCircles()
+            .UpdateLineTextItemMenu();
+        });
+
+        _this.Screen('max-width-1200', function() {
+          _this.flagBlockingHover = false;
+        })
+        .Screen('min-width-1200', function() {
+          _this.flagBlockingHover = true;
+        });
+
     });
 
 };
