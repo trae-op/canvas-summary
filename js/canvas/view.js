@@ -11,6 +11,13 @@ App.Views.MyView = new ViewKonva(function(_this) {
     rubberStage: true,
     initialize: function(stage, group, layer) {
 
+    if (_this.CheckMobile) {
+        document.getElementById('for-mobile')
+            .classList
+                .remove('close-mobile');
+        return;
+    }
+
     _this.Settings({
     	layer: layer,
     	group: group,

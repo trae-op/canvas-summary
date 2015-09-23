@@ -57,6 +57,25 @@ body {
 body, html {
   overflow: hidden; }
 
+.for-mobile {
+  color: #fff;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 25px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%; }
+  .for-mobile:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle; }
+
+.close-mobile {
+  display: none; }
+
 .close {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
