@@ -67,14 +67,15 @@ ViewKonva.prototype.Settings = function(object) {
         document.getElementById('for-mobile')
             .classList
                 .remove('close-mobile');
+var check=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 */
 
-    if (_this.CheckMobile) {
+    if (/Android|iPhone/i.test(navigator.userAgent)) {
         document.getElementById('for-mobile')
             .classList
                 .remove('close-mobile');
 
-        alert('mobile');
+        //alert('mobile');
         return;  
     }
 

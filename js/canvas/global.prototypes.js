@@ -246,8 +246,16 @@ ViewKonva.prototype.StartKeyboard = function() {
 
 ViewKonva.prototype.MobileTrue = function(callBack) {
   var _this = this;
-  _this.CheckMobile = ( 
-        device.android()
+  _this.CheckMobile = (
+        device.ios() || 
+        device.iphone() || 
+        device.ipad() || 
+        device.android() ||
+        device.androidPhone() ||
+        device.androidTablet() ||
+        device.windowsPhone() ||
+        device.mobile() ||
+        device.tablet()
   );
 
   if (_this.CheckMobile) callBack(_this.CheckMobile);
