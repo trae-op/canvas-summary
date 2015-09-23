@@ -70,14 +70,23 @@ ViewKonva.prototype.Settings = function(object) {
 var check=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 */
 
-    if (/Android|iPhone/i.test(navigator.userAgent)) {
-        document.getElementById('for-mobile')
-            .classList
-                .remove('close-mobile');
+    // if (/Android|iPhone/i.test(navigator.userAgent)) {
+    //     document.getElementById('for-mobile')
+    //         .classList
+    //             .remove('close-mobile');
 
-        //alert('mobile');
-        return;  
-    }
+    //     //alert('mobile');
+    //     return;  
+    // }
+
+    _this.MobileTrue(function() {
+       /* document.getElementById('for-mobile')
+            .classList
+                .remove('close-mobile');*/
+
+        alert('mobile');
+        //return;  
+    });
 
     _this.CircleItemsMenu()
         .OtherCircles()
