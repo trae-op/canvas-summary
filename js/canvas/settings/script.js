@@ -73,6 +73,8 @@ ViewKonva.prototype.Settings = function(object) {
         document.getElementById('for-mobile')
             .classList
                 .remove('close-mobile');
+
+        alert('mobile');
         return;  
     }
 
