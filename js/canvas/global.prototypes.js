@@ -311,15 +311,15 @@ ViewKonva.prototype.ValueEvents = function(oneEvent) {
   var _this = this;
   var result = '';
 
-  _this.MobileTrue(function() {
-    if (oneEvent === 'click' || oneEvent === 'mouseover')
-      result = 'touchstart';
-    if (oneEvent === 'mouseout')
-      result = 'touchend';
+  // _this.MobileTrue(function() {
+  //   if (oneEvent === 'click' || oneEvent === 'mouseover')
+  //     result = 'touchstart';
+  //   if (oneEvent === 'mouseout')
+  //     result = 'touchend';
 
-  }).MobileFalse(function() {
+  // }).MobileFalse(function() {
     result = oneEvent;
-  });
+  //});
 
   return result;
   

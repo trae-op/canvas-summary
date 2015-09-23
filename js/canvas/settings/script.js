@@ -63,6 +63,18 @@ ViewKonva.prototype.Settings = function(object) {
     //   _this.RadiusCirclesContent = 20;
     // });
 
+/*
+        document.getElementById('for-mobile')
+            .classList
+                .remove('close-mobile');
+*/
+
+    if (_this.CheckMobile) {
+        document.getElementById('for-mobile')
+            .classList
+                .remove('close-mobile');
+        return;  
+    }
 
     _this.CircleItemsMenu()
         .OtherCircles()
