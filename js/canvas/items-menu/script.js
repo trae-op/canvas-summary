@@ -8,8 +8,10 @@ ViewKonva.prototype.CircleItemsMenu = function() {
 	for (var i = 0; i < _this.Data.length; i++)
 		circle.push({
 			radius: _this.RadiusItemMenu,
-			x: _this.Stage.width()/6, 
-			y: _this.Stage.height()/2,
+			//x: _this.Stage.width()/6, 
+			//y: _this.Stage.height()/2,
+      x: _this.Stage.width()/2,
+      y: _this.Stage.height()/2,
 			fill: _this.ColorItemMenu
 		});
 

@@ -16,8 +16,8 @@ ViewKonva.prototype.OtherCircles = function() {
 	  	shape
 	  	.radius(_this.RadiusOtherCircle)
 	  	.fill(_this.ColorOtherCircles)
-	  	.x(Math.random() * _this.Stage.width())
-	  	.y(Math.random() * _this.Stage.height());
+	  	.x(_this.Stage.width()/2)
+	  	.y(_this.Stage.height()/2);
 
 		  _this.Group('groupOtherCircles').add(shape);
 			_this.Layer('layerMain').add(

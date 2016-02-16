@@ -25,6 +25,12 @@ ViewKonva.prototype.Settings = function(object) {
     _this.Layer = object.layer;
     _this.Group = object.group;
 
+    _this.FontSizeButtonStart = object.fontSizeButtonStart;
+    _this.ButtonStartWidth = object.buttonStartWidth;
+    _this.ButtonStartHeight = object.buttonStartHeight;
+    _this.ButtonStartFill = object.buttonStartFill;
+    _this.ButtonStartText = object.buttonStartText;
+
     _this.ColorOtherCircles = object.colorOtherCircles;
     _this.NumberOtherCircles = object.numberOtherCircles;
     _this.BorderLineOther = object.borderLineOther;
@@ -57,11 +63,11 @@ ViewKonva.prototype.Settings = function(object) {
     _this.AddClass = object.addClass;
 
 
-    // _this.MobileTrue(function() {
-    //   _this.NumberOtherCircles = 25;
-    //   _this.WHpreviewItemMenu = 25;
-    //   _this.RadiusCirclesContent = 20;
-    // });
+/*    _this.MobileTrue(function() {
+      _this.NumberOtherCircles = 25;
+      _this.WHpreviewItemMenu = 25;
+      _this.RadiusCirclesContent = 20;
+    });*/
 
 
     _this.MobileTrue(function() {
@@ -70,38 +76,55 @@ ViewKonva.prototype.Settings = function(object) {
                 .remove('close-mobile');
   
     }).MobileFalse(function() {
+        
+        _this.activateApp = true;
 
-        _this.CircleItemsMenu()
-            .OtherCircles()
-            .OtherLines()
+        
+        _this.RectButtonStart(function(shape) {
+          if (_this.activateApp) {
+            _this.activateApp = false;
 
-        .PreviewProjects()
-            .PreviewContent()
+            this.hide();
 
-        .LineItemsMenu()
-            .LineTextItemMenu()
-            .TextItemMenu()
-            .ShowLineItemMenu()
-            .ShowPreviewItemMenu()
+            _this.CircleItemsMenu()
+                .OtherCircles()
+                .OtherLines()
 
-        .TextContent()
+            .PreviewProjects()
+                .PreviewContent()
 
-        .ConnectingLine()
+            .LineItemsMenu()
+                .LineTextItemMenu()
+                .TextItemMenu()
+                .ShowLineItemMenu()
+                .ShowPreviewItemMenu()
 
-        .UpdatePositionItemMenu()
+            .TextContent()
 
-        .UpdatePositionCircles()
+            .ConnectingLine()
 
-        .ButtonClose();
+            .UpdatePositionItemMenu()
+
+            .UpdatePositionCircles()
+
+            .ButtonClose();
+          }
+        }).TextButtonStart();
+
+        
 
         _this.Events(window, 'hashchange', function() {
           _this.ChangeURL();
         });
 
         _this.ResizeScreen.push(function(){
-          _this.UpdatePositionItemMenu()
-            .UpdatePositionCircles()
-            .UpdateLineTextItemMenu();
+          if (!_this.activateApp) {
+            _this.UpdatePositionItemMenu()
+              .UpdatePositionCircles()
+              .UpdateLineTextItemMenu();
+          } else {
+            _this.UpdateRectTextButtonStart();
+          }
         });
 
         _this.Screen('max-width-1200', function() {

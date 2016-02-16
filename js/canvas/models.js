@@ -12,6 +12,10 @@ App.Models.Layers = [
 
 App.Models.Groups = [
   {
+    id: 'groupButtonStart'
+  },
+
+  {
     id: 'groupLineItemsMenu'
   },
   {

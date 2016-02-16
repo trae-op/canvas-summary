@@ -17,6 +17,13 @@ App.Views.MyView = new ViewKonva(function(_this) {
     	data: App.Models.Data,
     	
     	speedAllCircles: 1,
+
+      fontSizeButtonStart: 30,
+      buttonStartWidth: 200,
+      buttonStartHeight: 100,
+      buttonStartFill: '#222',
+      buttonStartText: 'start',
+
     	
     	colorItemMenu: '#fff',
     	borderLineItemMenu: 1,
