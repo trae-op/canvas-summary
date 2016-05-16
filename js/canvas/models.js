@@ -123,21 +123,6 @@ App.Models.Data = [
           {
             link: 'http://placeview.in',
             image: 'img/placeview.png'
-          },
-          {
-            link: 'http://rainbowcore.it',
-            image: 'img/rainbowcore.png'
-          }
-        ]
-      },
-      {
-        text: 'Palatanaroda.com\n01.2012 - 04.2013',
-        image: 'img/palatanaroda.png',
-        id: 'palatanaroda',
-        projects: [
-          {
-            link: 'http://palatanaroda.com',
-            image: 'img/palatanaroda.png'
           }
         ]
       }
