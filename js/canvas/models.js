@@ -90,14 +90,14 @@ App.Models.Groups = [
 
 App.Models.Data = [
   {
-    text: 'Компания/Проекты',
+    text: 'Companies/Projects',
     image: 'img/projects.jpg',
     x: 10,
     y: 3,
     url: 'company',
     company: [
       {
-        text: 'FFW - \nмеждународная \nIТ-компания, \nпредоставляющая \nполный спектр \nуслуг web-агентства.\n09.2014 - 08.2015',
+        text: 'FFW - we engineer digital \nbusiness solutions \nand create engaging\n online experiences',
         image: 'img/ffw.png',
         id: 'ffw',
         projects: [
@@ -116,7 +116,7 @@ App.Models.Data = [
         ]
       },
       {
-        text: 'Placeview.in - \nИнтерактивные \nвиртуальные туры \nновый формат \nдля бизнеса.\n05.2013 - 08.2014',
+        text: 'Placeview - interactive virtual \ntours it`s a new\n format for business',
         image: 'img/placeview.png',
         id: 'placeview',
         projects: [
@@ -130,7 +130,7 @@ App.Models.Data = [
     ]
   },
   {
-    text: 'Опыт работы',
+    text: 'Skills',
     image: 'img/skills.jpg',
     x: 12,
     y: 1.8,
@@ -175,7 +175,7 @@ App.Models.Data = [
     ]
   },
   {
-    text: 'Контакты',
+    text: 'Contacts',
     image: 'img/contacts.jpg',
     x: 10,
     y: 1.3,
@@ -192,7 +192,7 @@ App.Models.Data = [
     ]
   },
   {
-    text: 'Обновить',
+    text: 'Update',
     x: 15,
     y: 1.1,
     url: false
