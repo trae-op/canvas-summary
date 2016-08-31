@@ -138,7 +138,7 @@ App.Models.Data = [
     skills: [
       {
         image: 'https://d1dkupr86d302v.cloudfront.net/community/assets/tag-icons/icon-tag-react-a12a9f3cf656135932ae32bbd1df104f891b5f6f9f07c10deef7da173f52fcda.svg',
-        text: 'Sass'
+        text: 'React.js'
       },
       {
         image: 'img/sass.png',
