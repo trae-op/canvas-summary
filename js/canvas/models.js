@@ -97,7 +97,7 @@ App.Models.Data = [
     url: 'company',
     company: [
       {
-        text: 'FFW - we engineer digital \nbusiness solutions \nand create engaging\n online experiences',
+        text: 'FFW - we engineer \ndigital business solutions \nand create engaging \nonline experiences',
         image: 'img/ffw.png',
         id: 'ffw',
         projects: [
@@ -116,7 +116,7 @@ App.Models.Data = [
         ]
       },
       {
-        text: 'Placeview - interactive virtual \ntours it`s a new\n format for business',
+        text: 'Placeview - interactive \nvirtual tours it`s a \nnew format for business',
         image: 'img/placeview.png',
         id: 'placeview',
         projects: [
@@ -136,6 +136,10 @@ App.Models.Data = [
     y: 1.8,
     url: 'skills',
     skills: [
+      {
+        image: 'https://d1dkupr86d302v.cloudfront.net/community/assets/tag-icons/icon-tag-react-a12a9f3cf656135932ae32bbd1df104f891b5f6f9f07c10deef7da173f52fcda.svg',
+        text: 'Sass'
+      },
       {
         image: 'img/sass.png',
         text: 'Sass'
